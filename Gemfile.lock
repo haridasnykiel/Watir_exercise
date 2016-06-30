@@ -1,0 +1,56 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    awesome_print (1.7.0)
+    childprocess (0.5.9)
+      ffi (~> 1.0, >= 1.0.11)
+    coderay (1.1.1)
+    commonwatir (4.0.0)
+    diff-lcs (1.2.5)
+    ffi (1.9.10)
+    method_source (0.8.2)
+    pry (0.10.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    rspec (3.4.0)
+      rspec-core (~> 3.4.0)
+      rspec-expectations (~> 3.4.0)
+      rspec-mocks (~> 3.4.0)
+    rspec-core (3.4.4)
+      rspec-support (~> 3.4.0)
+    rspec-expectations (3.4.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-mocks (3.4.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-support (3.4.1)
+    rubyzip (1.2.0)
+    selenium-webdriver (2.53.4)
+      childprocess (~> 0.5)
+      rubyzip (~> 1.0)
+      websocket (~> 1.0)
+    slop (3.6.0)
+    watir (5.0.0)
+      commonwatir (~> 4)
+      watir-webdriver
+    watir-webdriver (0.9.1)
+      selenium-webdriver (>= 2.46.2)
+    websocket (1.2.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  awesome_print
+  pry
+  rspec
+  selenium-webdriver
+  watir
+
+RUBY VERSION
+   ruby 2.0.0p648
+
+BUNDLED WITH
+   1.12.5
