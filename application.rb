@@ -1,7 +1,0 @@
-require 'awesome_print'
-require 'selenium-webdriver'
-require 'watir-webdriver'
-require 'pry'
-require 'rspec'
-require 'yaml'
-require './tumblr_automation.rb'

@@ -1,6 +1,8 @@
 require 'rspec'
-# require 'date'
-require './application'
+require 'pry'
+require 'watir'
+require 'yaml'
+# require './application'
 
 RSpec.configure do |config|
   config.color = true
