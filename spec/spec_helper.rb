@@ -1,6 +1,6 @@
 require 'rspec'
 require 'pry'
-require 'watir'
+require 'watir-webdriver'
 require 'yaml'
 # require './application'
 
