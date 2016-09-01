@@ -13,7 +13,7 @@ describe "Tumblr tests" do
   end
 
   it "Load YAML file" do
-    expect(@ep.to_a.size).to eq 2
+    expect(@ep.to_a.size).to eq 4
     expect(@ep["email"]).to eq "haridasnykiel@gmail.com"
     expect(@ep["password"]).to eq "hello123"
   end
@@ -48,6 +48,7 @@ describe "Tumblr tests" do
     else
       expect(post_body.text).to eq "test stuffffffffff"
     end
+    sleep 2
   end
 
   it "Should be able to logout" do
@@ -60,6 +61,25 @@ describe "Tumblr tests" do
     expect(@driver.url).to eq "https://www.tumblr.com/login"
   end
 
+  it "Should display an error message when an email with invalid format is entered." do
+    e = @driver.text_field(id: "signup_determine_email")
+    e.when_present.set(@ep["invalid"])
+    n = @driver.button id: "signup_forms_submit"
+    n.when_present.click
+    error = @driver.ul(id: "signup_form_errors").li(class: "error")
+    expect(error.html).to eq "<li class=\"error\">That's not a valid email address. Please try again.</li>"
+  end
 
+  it "Should display error message when an incorrect password is entered" do
+    e = @driver.text_field(id: "signup_determine_email")
+    e.when_present.set(@ep["email"])
+    n = @driver.button id: "signup_forms_submit"
+    n.when_present.click
+    p = @driver.text_field(id: "signup_password")
+    p.when_present.set(@ep["invalidP"])
+    n.when_present.click
+    error = @driver.ul(id: "signup_form_errors").li(class: "error")
+    expect(error.html).to eq "<li class=\"error\">Your email or password were incorrect.</li>"
+  end
 
 end
